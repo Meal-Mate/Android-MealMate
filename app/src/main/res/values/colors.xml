@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteTransparent">#1FFFFFFF</color>
+
+
+    <color name="colorBrandMealMate900">#DC2F02</color>
+    <color name="colorBrandMealMate800">#DC2F02</color>
+    <color name="colorBrandMealMate700">#E85D04</color>
+    <color name="colorBrandMealMate600">#E85D04</color>
+    <color name="colorBrandMealMate500">#F48C06</color>
+    <color name="colorBrandMealMate400">#F48C06</color>
+    <color name="colorBrandMealMate300">#FAA307</color>
+    <color name="colorBrandMealMate200">#FAA307</color>
+    <color name="colorBrandMealMate100">#FFBA08</color>
+
+    <color name="colorNeutral900">#192252</color>
+    <color name="colorNeutral800">#2A3563</color>
+    <color name="colorNeutral700">#424F7B</color>
+    <color name="colorNeutral600">#606D93</color>
+    <color name="colorNeutralDark500">#2C3131</color>
+
+    <color name="colorNeutral500">#2C3131</color>
+    <color name="colorNeutral400">#626262</color>
+    <color name="colorNeutral300">#A9A9A9</color>
+    <color name="colorNeutral200">#CACACA</color>
+    <color name="colorNeutral100">#CACACA</color>
+    <color name="colorNeutral0">#FFFFFF</color>
+
+    <color name="colorSuccess900">#0F595A</color>
+    <color name="colorSuccess800">#1A6D66</color>
+    <color name="colorSuccess700">#298876</color>
+    <color name="colorSuccess600">#3BA285</color>
+    <color name="colorSuccess500">#52BD94</color>
+    <color name="colorSuccess400">#7BD7AB</color>
+    <color name="colorSuccess300">#9BEBBC</color>
+    <color name="colorSuccess200">#A1F9B4</color>
+    <color name="colorSuccess100">#CFFCD4</color>
+
+    <color name="colorError900">#7A0E40</color>
+    <color name="colorError800">#931846</color>
+    <color name="colorError700">#B7264F</color>
+    <color name="colorError600">#DB3756</color>
+    <color name="colorError500">#FF4C5E</color>
+    <color name="colorError400">#FF7879</color>
+    <color name="colorError300">#FF9C93</color>
+    <color name="colorError200">#FFC3B7</color>
+    <color name="colorError100">#FFE4DB</color>
+    <color name="colorError">#E25C5C</color>
+
+    <color name="colorWarning900">#7A4B04</color>
+    <color name="colorWarning800">#935F07</color>
+    <color name="colorWarning700">#B77C0B</color>
+    <color name="colorWarning600">#DB9B10</color>
+    <color name="colorWarning500">#ffbd16</color>
+    <color name="colorWarning400">#FFD250</color>
+    <color name="colorWarning300">#FFDF73</color>
+    <color name="colorWarning200">#FFECA1</color>
+    <color name="colorWarning100">#FFF7D0</color>
+
+    <color name="colorInformation900">#071561</color>
+    <color name="colorInformation800">#0D1F76</color>
+    <color name="colorInformation700">#142D92</color>
+    <color name="colorInformation600">#1D3EAF</color>
+    <color name="colorInformation500">#2952CC</color>
+    <color name="colorInformation400">#597FE0</color>
+    <color name="colorInformation300">#7C9FEF</color>
+    <color name="colorInformation200">#AAC4F9</color>
+    <color name="colorInformation100">#D4E2FC</color>
+</resources>

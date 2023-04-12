@@ -1,0 +1,223 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MealMate" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorEdgeEffect">@color/colorBrandMealMate500</item>
+        <item name="android:textCursorDrawable">@drawable/bg_mealmate_cursor_text_input</item>
+
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< BUTTON STYLE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="ButtonStylePrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+
+    <style name="ButtonStyleSecondary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+        <item name="android:textColor">@color/colorNeutral300</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< IMAGE STYLE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="ImageBackStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:src">@drawable/ic_mealmate_arrow_left</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< TEXT STYLE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="TxtMealMate">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+
+    //24sp
+    <style name="TxtMealMate.ExtraBold24">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_extrabold</item>
+    </style>
+
+    <style name="TxtMealMate.Bold24">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    <style name="TxtMealMate.Semibold24">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    //18sp
+    <style name="TxtMealMate.Medium18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+    </style>
+
+    <style name="TxtMealMate.Regular18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+    </style>
+
+    <style name="TxtMealMate.Bold18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    <style name="TxtMealMate.Semibold18">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    //16sp
+    <style name="TxtMealMate.Bold16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    <style name="TxtMealMate.Regular16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+    </style>
+
+    <style name="TxtMealMate.Medium16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+    </style>
+
+    <style name="TxtMealMate.Semibold16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    //14sp
+    <style name="TxtMealMate.Regular14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+    </style>
+
+    <style name="TxtMealMate.Semibold14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    <style name="TxtMealMate.Medium14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorNeutral300</item>
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+    </style>
+
+    <style name="TxtMealMate.Bold14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorBrandMealMate500</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    //12sp
+    <style name="TxtMealMate.Bold12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorNeutral900</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    <style name="TxtMealMate.Medium12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorBrandMealMate500</item>
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+    </style>
+
+    <style name="TxtMealMate.Regular12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+    </style>
+
+    <style name="TxtMealMate.Semibold12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorNeutral500</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    <style name="TxtMealMate.Regular12.Error">
+        <item name="android:textColor">@color/colorError700</item>
+    </style>
+
+    <style name="TextHintStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< RADIO BUTTON STYLE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="RbMealMateStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_mealmate_radiobutton_selector</item>
+        <item name="android:button">@drawable/bg_mealmate_radiobutton_selector</item>
+        <item name="android:textColor">@color/color_mealmate_rb_selector</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< Bottom Sheet >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="MealMateBottomSheet" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">#66000000</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<< Material CardView >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="Theme.MealMate">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+    </style>
+
+</resources>

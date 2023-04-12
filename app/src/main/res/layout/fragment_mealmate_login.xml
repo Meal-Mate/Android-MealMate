@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:id="@+id/prgbar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        style="@style/ImageBackStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TxtMealMate.Bold16"
+        android:text="@string/sign_in"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            style="@style/TxtMealMate.Medium14"
+            android:layout_marginStart="0dp"
+            android:text="@string/email_address"
+            android:textColor="@color/colorNeutral900" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/email_address"
+            android:textColorHint="@color/colorNeutral300"
+            app:boxCornerRadiusBottomEnd="26dp"
+            app:boxCornerRadiusBottomStart="26dp"
+            app:boxCornerRadiusTopEnd="26dp"
+            app:boxCornerRadiusTopStart="26dp"
+            app:boxStrokeColor="@color/color_edit_text"
+            app:boxStrokeWidth="1.5dp"
+            app:hintEnabled="false"
+            app:hintTextAppearance="@style/TextHintStyle"
+            app:hintTextColor="@color/colorNeutral900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:inputType="textEmailAddress"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral900"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            style="@style/TxtMealMate.Medium14"
+            android:layout_marginStart="0dp"
+            android:text="@string/password"
+            android:textColor="@color/colorNeutral900" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/password"
+            android:textColorHint="@color/colorNeutral300"
+            app:boxCornerRadiusBottomEnd="26dp"
+            app:boxCornerRadiusBottomStart="26dp"
+            app:boxCornerRadiusTopEnd="26dp"
+            app:boxCornerRadiusTopStart="26dp"
+            app:boxStrokeColor="@color/color_edit_text"
+            app:boxStrokeWidth="1.5dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleDrawable="@drawable/toggle_mealemate_password_selector"
+            app:hintTextAppearance="@style/TextHintStyle"
+            app:hintTextColor="@color/colorNeutral900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:inputType="textPassword"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral900"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/TxtMealMate.Semibold14"
+        android:id="@+id/tv_forgot_password"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorBrandMealMate500"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        style="@style/ButtonStylePrimary"
+        android:id="@+id/btn_get_started"
+        android:text="@string/sign_in"
+        android:background="@drawable/bg_mealmate_btn_primary"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_get_started">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:layout_marginStart="12dp"
+            android:layout_weight="0.4"
+            android:background="@color/colorNeutral200" />
+
+        <TextView
+            style="@style/TxtMealMate.Regular12"
+            android:layout_weight="0"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:text="@string/or" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="0.4"
+            android:background="@color/colorNeutral200" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_google_sign_in"
+            android:background="@drawable/bg_mealmate_btn_secondary"
+            android:backgroundTint="@null"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:src="@drawable/ic_mealmate_google"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/TxtMealMate.Semibold16"
+                android:text="@string/continue_with_google"
+                android:textColor="@color/colorNeutral900"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="0dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_facebook_sign_in"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_mealmate_btn_secondary"
+            android:backgroundTint="@null"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:src="@drawable/ic_mealmate_facebook"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/TxtMealMate.Semibold16"
+                android:text="@string/continue_with_facebook"
+                android:textColor="@color/colorNeutral900"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="0dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="48dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            style="@style/TxtMealMate.Medium14"
+            android:text="@string/do_not_have_an_account"
+            android:textColor="@color/colorNeutral900"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"/>
+
+        <TextView
+            style="@style/TxtMealMate.Bold14"
+            android:id="@+id/tv_sign_up"
+            android:text="@string/sign_up"
+            android:layout_marginStart="2sp"
+            android:layout_marginEnd="0dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

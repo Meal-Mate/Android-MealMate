@@ -1,0 +1,16 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <item
+        android:id="@+id/popup_all"
+        android:title="All" />
+    <item
+        android:id="@+id/popup_hot_bids"
+        android:title="Hot Bids" />
+    <item
+        android:id="@+id/popup_featured"
+        android:title="Featured" />
+    <item
+        android:id="@+id/popup_new_release"
+        android:title="New Release" />
+</menu>

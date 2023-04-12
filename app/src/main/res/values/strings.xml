@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MealMate</string>
+
+    <string name="masuk">Masuk</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_started">Get Started</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="aksty">Aksty.</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">OR</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="do_not_have_an_account">Dont’t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
