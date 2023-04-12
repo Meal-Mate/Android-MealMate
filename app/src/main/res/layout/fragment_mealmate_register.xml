@@ -6,6 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.RegisterFragment">
 
+    <ProgressBar
+        android:id="@+id/prgbar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/btn_back"
         style="@style/ImageBackStyle"
@@ -26,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout_username"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
@@ -48,7 +58,7 @@
             android:layout_height="52dp"
             android:layout_marginTop="8dp"
             android:focusableInTouchMode="true"
-            android:hint="Username"
+            android:hint="Username ..."
             android:textColorHint="@color/colorNeutral300"
             app:boxCornerRadiusBottomEnd="26dp"
             app:boxCornerRadiusBottomStart="26dp"
@@ -83,7 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
@@ -140,11 +150,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutPhone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -193,57 +204,81 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutPhone"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_continue"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            style="@style/TxtMealMate.Medium14"
+            android:layout_marginStart="0dp"
+            android:text="@string/phone_number"
+            android:textColor="@color/colorNeutral900" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/phone_number"
+            android:textColorHint="@color/colorNeutral300"
+            app:boxCornerRadiusBottomEnd="26dp"
+            app:boxCornerRadiusBottomStart="26dp"
+            app:boxCornerRadiusTopEnd="26dp"
+            app:boxCornerRadiusTopStart="26dp"
+            app:boxStrokeColor="@color/color_edit_text"
+            app:boxStrokeWidth="2.3dp"
+            app:hintEnabled="false"
+            app:hintTextAppearance="@style/TextHintStyle"
+            app:hintTextColor="@color/colorNeutral900"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:inputType="textEmailAddress"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral900"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_continue"
         style="@style/ButtonStylePrimary"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/bg_mealmate_btn_primary"
         android:backgroundTint="@null"
         android:text="Continue"
-        android:layout_marginBottom="40dp"
         app:backgroundTint="@null"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPhone"
+        app:layout_constraintVertical_bias="0" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginStart="12dp"
-            android:layout_weight="0.4"
-            android:background="@color/colorNeutral200" />
-
-        <TextView
-            style="@style/TxtMealMate.Regular12"
-            android:layout_weight="0"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:gravity="center"
-            android:text="@string/or" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginEnd="12dp"
-            android:layout_weight="0.4"
-            android:background="@color/colorNeutral200" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"

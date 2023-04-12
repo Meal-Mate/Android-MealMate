@@ -82,9 +82,6 @@ class LoginFragment: Fragment() {
 
     }
 
-    fun doSignup() {
-
-    }
 
     fun showLoading() {
         binding.prgbar.visibility = View.VISIBLE
