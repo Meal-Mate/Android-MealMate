@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_mealmate_white_rounded"
+    android:paddingVertical="32dp"
+    android:paddingHorizontal="36dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_mealmate_email_active" />
+
+    <TextView
+        style="@style/TxtMealMate.Semibold24"
+        android:text="Check Your Email"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="0dp"
+        android:gravity="center"
+        android:layout_marginEnd="0dp" />
+
+    <TextView
+        style="@style/TxtMealMate.Regular14"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorNeutral300"
+        android:text="We already sent a link to your email to reset your password"
+        android:gravity="center" />
+
+</LinearLayout>

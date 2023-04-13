@@ -2,8 +2,10 @@ package com.example.mealmate.data.api.methods
 
 import com.example.mealmate.data.api.ApiClient
 import com.example.mealmate.data.api.request.LoginRequest
+import com.example.mealmate.data.api.request.RecoverPasswordRequest
 import com.example.mealmate.data.api.request.RegisterRequest
 import com.example.mealmate.data.api.response.LoginResponse
+import com.example.mealmate.data.api.response.RecoverPasswordResponse
 import com.example.mealmate.data.api.response.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -16,6 +18,9 @@ interface UserApi {
 
     @POST("/user/register")
     suspend fun registerUser(@Body registerRequest: RegisterRequest):Response<RegisterResponse>
+
+    @POST("/resetpassword/recover")
+    suspend fun recover(@Body recoverPasswordRequest: RecoverPasswordRequest):Response<RecoverPasswordResponse>
 
     companion object {
         fun getApi(): UserApi? {

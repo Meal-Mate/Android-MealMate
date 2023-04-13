@@ -7,6 +7,7 @@ import com.example.mealmate.R
 object SessionManager {
 
     const val USER_TOKEN = "user_token"
+    const val USER_EMAIL= "user_email"
 
     /**
      * Function to save auth token
@@ -14,6 +15,13 @@ object SessionManager {
     fun saveAuthToken(context: Context, token: String) {
         saveString(context, USER_TOKEN, token)
     }
+    fun saveEmailReset(context: Context,email:String){
+        saveString(context, USER_EMAIL, email)
+    }
+    fun getEmailReset(context: Context):String?{
+        return getString(context, USER_EMAIL)
+    }
+
 
     /**
      * Function to fetch auth token
