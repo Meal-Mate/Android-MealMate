@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.mealmate.R
 import com.example.mealmate.databinding.ActivityMealmateMainBinding
+import com.example.mealmate.ui.dashboard.home.MealMateHomeFragement
 import com.example.mealmate.ui.dashboard.profile.MealMateProfileFragment
 
 
@@ -43,12 +44,13 @@ class MealMateMainActivity: AppCompatActivity() {
         binding.apply {
 
                 val profileFragment = MealMateProfileFragment()
-
+                val homeFragment = MealMateHomeFragement()
+                 setCurrentFragment(homeFragment)
 
             bottomNavigation.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.home -> {
-
+                        setCurrentFragment(homeFragment)
                     }
                     R.id.explore -> {
 

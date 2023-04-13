@@ -21,12 +21,13 @@ class MealMateOnboarding: AppCompatActivity()  {
     private val onBoardingViewPagerAdapter = OnboardingAdapter(
         listOf(
             MealMateOnboarding(
-                "The Best Place To Rest\nYour Body",
-                "Browse and build your collection of the world’s\nmost cutting-edge digital art"
+                        "Welcome to MealMate",
+                " Your Personal Meal Matching App"
             ),
             MealMateOnboarding(
-                "It’s All About\nScarity",
-                "Art is minted as an NFT and comes as limited\neditions, making them extremely valuable."
+                "Finding your next MealMate\n" +
+                        "Was never that easy",
+                "Discover Your Perfect Meal Match and Simplify Your Food Choices "
             )
         )
     )
