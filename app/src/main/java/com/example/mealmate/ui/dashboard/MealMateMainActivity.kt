@@ -16,6 +16,7 @@ class MealMateMainActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMealmateMainBinding.inflate(layoutInflater)
 
         binding.bottomNavigation.itemIconTintList = null
