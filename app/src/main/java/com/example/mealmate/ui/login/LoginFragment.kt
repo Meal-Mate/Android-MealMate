@@ -80,6 +80,7 @@ class LoginFragment: Fragment() {
                 }
                 else{
                     verifyFragment.setEmail(email)
+                    SessionManager.saveEmailReset(this.requireContext(),email)
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.host_login_activity, VerifyFragment())
                         .addToBackStack(null)

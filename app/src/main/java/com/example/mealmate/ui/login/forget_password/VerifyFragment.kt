@@ -12,6 +12,7 @@ import com.example.mealmate.R
 import com.example.mealmate.data.api.response.BaseResponse
 import com.example.mealmate.data.api.response.RecoverPasswordResponse
 import com.example.mealmate.databinding.FragmentMealmateVerifyBinding
+import com.example.mealmate.utils.SessionManager
 import com.harshita.retrofitlogin.viewmodel.LoginViewModel
 
 class VerifyFragment : Fragment() {
@@ -81,7 +82,8 @@ class VerifyFragment : Fragment() {
 
             binding.btnContinue.setOnClickListener {
                 print("recovering")
-                doRecover()
+                val email =SessionManager.getEmailReset(this.requireContext())
+                doRecover(email)
             }
 
 
@@ -115,10 +117,12 @@ class VerifyFragment : Fragment() {
         }
     }
 
-    fun doRecover() {
-        this.email?.let { email ->
-            println("Email is $email")
+    fun doRecover(email: String?) {
+        if (email != null) {
             viewModel.recoverPassword(email = email)
+        }
+        else{
+            print("Email Null !!!")
         }
     }
 
