@@ -60,7 +60,7 @@ class MealMateSettingFragment : Fragment() {
 
     private fun darkModeSettingView() {
 
-        val sharedPreferences = requireActivity().getSharedPreferences("AKSTY", Context.MODE_PRIVATE)
+        val sharedPreferences = requireActivity().getSharedPreferences("MealMate", Context.MODE_PRIVATE)
         val mode = sharedPreferences.getInt("light_dark_mode", AppCompatDelegate.MODE_NIGHT_NO)
         AppCompatDelegate.setDefaultNightMode(mode)
 

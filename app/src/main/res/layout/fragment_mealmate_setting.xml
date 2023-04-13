@@ -130,50 +130,6 @@
         app:layout_constraintTop_toBottomOf="@id/btn_edit_profile"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/btn_currency"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="12dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:clickable="true"
-        android:background="?attr/selectableItemBackground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_general"
-        tools:ignore="UseCompoundDrawables"
-        android:focusable="true">
-
-        <TextView
-            style="@style/TxtMealMate.Bold18"
-            android:text="Currency"
-            android:layout_weight="1"
-            android:layout_margin="0dp" />
-
-        <TextView
-            style="@style/TxtMealMate.Bold14"
-            android:textColor="@color/colorNeutral400"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:text="USD"
-            android:background="@drawable/bg_mealmate_id" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:scaleX="-1"
-            android:src="@drawable/ic_mealmate_arrow_left" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btn_country"
@@ -189,7 +145,7 @@
         android:background="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_currency"
+        app:layout_constraintTop_toBottomOf="@+id/tv_general"
         tools:ignore="UseCompoundDrawables"
         android:focusable="true">
 
@@ -208,7 +164,7 @@
             android:paddingBottom="4dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:text="USA"
+            android:text="TN"
             android:background="@drawable/bg_mealmate_id" />
 
         <ImageView
@@ -296,7 +252,7 @@
             android:paddingBottom="4dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:text="Metamask"
+            android:text="Stripe"
             android:background="@drawable/bg_mealmate_id" />
 
         <ImageView

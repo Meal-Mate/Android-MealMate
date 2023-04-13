@@ -31,10 +31,12 @@ class MealMateProfileFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val sharedPref : SharedPreferences =
             requireContext().getSharedPreferences(context?.getString(R.string.app_name), Context.MODE_PRIVATE)
-        val username = sharedPref.getString("username", "username")
+        val username = sharedPref.getString("Username", "username")
+        val email = sharedPref.getString("email", "email")
 
         binding.apply {
             tvUsername.setText(username)
+            tvIdUser.setText(email)
             ivAvatar.loadImage("https://picsum.photos/401/400")
             linearLayoutCopy.setOnClickListener {
                 Toast.makeText(requireContext(), "Copied", Toast.LENGTH_SHORT).show()

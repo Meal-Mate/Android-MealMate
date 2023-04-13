@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_enabled="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <stroke
+                android:color="@color/colorBrandMealMate500"
+                android:width="1.5dp"/>
+            <corners android:radius="26dp" />
+        </shape>
+    </item>
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <stroke
+                android:color="@color/colorNeutral200"
+                android:width="1.5dp"/>
+            <corners android:radius="26dp" />
+        </shape>
+    </item>
+</selector>
