@@ -100,10 +100,8 @@ class LoginFragment: Fragment() {
                 requireContext().getSharedPreferences(context?.getString(R.string.app_name), Context.MODE_PRIVATE)
             val editor = sharedPref.edit()
             editor.putString("Username", data?.data?.username)
-            editor.putString("Username", data?.data?.username)
-            editor.putString("Username", data?.data?.username)
-            editor.putString("Username", data?.data?.username)
-
+            editor.putString("email", data?.data?.email)
+            editor.putString("phone", data?.data?.phone)
             editor.apply()
             navigateToHome()
         }
