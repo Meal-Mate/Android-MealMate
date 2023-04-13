@@ -1,21 +1,28 @@
-package com.aksantaradigital.aksaone.nft.ui.login.register.verify
+package com.example.mealmate.ui.login.forget_password
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.commit
-import com.aksantaradigital.aksaone.nft.R
-import com.aksantaradigital.aksaone.nft.databinding.FragmentNftVerifyBinding
-import com.aksantaradigital.aksaone.nft.ui.login.register.verify.setpin.NftSetPinFragment
+import androidx.fragment.app.viewModels
+import com.example.mealmate.R
+import com.example.mealmate.data.api.response.BaseResponse
+import com.example.mealmate.data.api.response.RecoverPasswordResponse
+import com.example.mealmate.databinding.FragmentMealmateVerifyBinding
+import com.harshita.retrofitlogin.viewmodel.LoginViewModel
 
-class NftVerifyFragment : Fragment() {
+class VerifyFragment : Fragment() {
 
-    private lateinit var binding: FragmentNftVerifyBinding
+    private lateinit var binding: FragmentMealmateVerifyBinding
+    private val viewModel: LoginViewModel by viewModels()
+    private var email: String? = null
+
 
     companion object {
-        private val TAG = NftVerifyFragment::class.java.simpleName
+        private val TAG = VerifyFragment::class.java.simpleName
     }
 
     override fun onCreateView(
@@ -23,52 +30,73 @@ class NftVerifyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentNftVerifyBinding.inflate(layoutInflater, container, false)
+        binding = FragmentMealmateVerifyBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        print(email)
 
-        binding.apply {
+        viewModel.recoverResult.observe(this.viewLifecycleOwner) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    showLoading()
+                }
 
-            btnBack.setOnClickListener {
+                is BaseResponse.Success -> {
+                    stopLoading()
+                    processRecover(it.data)
+                }
+
+                is BaseResponse.Error -> {
+                    processError(it.msg)
+                }
+                else -> {
+                    stopLoading()
+                }
+            }
+        }
+
+
+            binding.btnBack.setOnClickListener {
                 requireActivity().supportFragmentManager.popBackStackImmediate()
             }
 
-            rbEmail.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.rbEmail.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
-                    rbPhone.isChecked = false
+                    binding.rbPhone.isChecked = false
                     email(true)
                     phone(false)
                 }
             }
 
-            rbPhone.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.rbPhone.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
-                    rbEmail.isChecked = false
+                    binding.rbEmail.isChecked = false
                     phone(true)
                     email(false)
                 }
             }
 
-            btnContinue.setOnClickListener {
-                setCurrentFragment(NftSetPinFragment())
+            binding.btnContinue.setOnClickListener {
+                print("recovering")
+                doRecover()
             }
 
-        }
+
     }
 
     private fun phone(state: Boolean) {
         if (state){
             binding.apply {
-                ivPhone.setBackgroundResource(R.drawable.ic_nft_phone_active)
-                linearPhone.setBackgroundResource(R.drawable.bg_nft_outline_primary)
+                ivPhone.setBackgroundResource(R.drawable.ic_mealmate_phone_active)
+                linearPhone.setBackgroundResource(R.drawable.bg_mealmate_outline_primary)
             }
         } else {
             binding.apply {
-                ivPhone.setBackgroundResource(R.drawable.ic_nft_phone_inactive)
-                linearPhone.setBackgroundResource(R.drawable.bg_nft_outline_secondary)
+                ivPhone.setBackgroundResource(R.drawable.ic_mealmate_phone_inactive)
+                linearPhone.setBackgroundResource(R.drawable.bg_mealmate_outline_secondary)
             }
         }
     }
@@ -76,22 +104,52 @@ class NftVerifyFragment : Fragment() {
     private fun email(state: Boolean) {
         if (state){
             binding.apply {
-                ivEmail.setBackgroundResource(R.drawable.ic_nft_email_active)
-                linearEmail.setBackgroundResource(R.drawable.bg_nft_outline_primary)
+                ivEmail.setBackgroundResource(R.drawable.ic_mealmate_email_active)
+                linearEmail.setBackgroundResource(R.drawable.bg_mealmate_outline_primary)
             }
         } else {
             binding.apply {
-                ivEmail.setBackgroundResource(R.drawable.ic_nft_email_inactive)
-                linearEmail.setBackgroundResource(R.drawable.bg_nft_outline_secondary)
+                ivEmail.setBackgroundResource(R.drawable.ic_mealmate_email_inactive)
+                linearEmail.setBackgroundResource(R.drawable.bg_mealmate_outline_secondary)
             }
         }
     }
 
-    private fun setCurrentFragment(fragment: Fragment) {
+    fun doRecover() {
+        this.email?.let { email ->
+            println("Email is $email")
+            viewModel.recoverPassword(email = email)
+        }
+    }
+
+
+    fun showLoading() {
+        binding.prgbar.visibility = View.VISIBLE
+    }
+
+    fun stopLoading() {
+        binding.prgbar.visibility = View.GONE
+    }
+    fun processRecover(data: RecoverPasswordResponse?) {
+        showToast("Success:" + data?.message)
+        navigateToSetPin()
+    }
+
+    fun processError(msg: String?) {
+        showToast("Error:" + msg)
+    }
+
+    fun showToast(msg: String) {
+        Toast.makeText(this.requireContext(), msg, Toast.LENGTH_SHORT).show()
+    }
+    private fun navigateToSetPin() {
         parentFragmentManager.commit {
             addToBackStack(null)
-            replace(R.id.host_login_activity, fragment)
+            replace(R.id.host_login_activity, SetPinFragment())
         }
+    }
+    fun setEmail(email: String) {
+        this.email = email
     }
 
 }

@@ -1,4 +1,4 @@
-package com.aksantaradigital.aksaone.nft.ui.login.register.verify
+package com.example.mealmate.ui.login.forget_password
 
 import android.app.Dialog
 import android.graphics.Color
@@ -9,15 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import com.aksantaradigital.aksaone.nft.databinding.FragmentDialogCheckEmailBinding
+import com.example.mealmate.databinding.FragmentCheckEmailBinding
 
 class DialogCheckEmailFragment: DialogFragment() {
 
-    private lateinit var binding: FragmentDialogCheckEmailBinding
+    private lateinit var binding: FragmentCheckEmailBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
-        binding = FragmentDialogCheckEmailBinding.inflate(layoutInflater)
+        binding = FragmentCheckEmailBinding.inflate(layoutInflater)
         builder.setView(binding.root)
         return builder.create()
     }

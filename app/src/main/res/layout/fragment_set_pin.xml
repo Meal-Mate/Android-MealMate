@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.login.register.verify.setpin.NftSetPinFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -15,7 +14,7 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@style/TxtNft.Bold24"
+        style="@style/TxtMealMate.Bold24"
         android:layout_marginTop="56dp"
         android:layout_marginStart="24dp"
         android:text="Create Your Pin Code"
@@ -24,7 +23,7 @@
 
     <TextView
         android:id="@+id/textView2"
-        style="@style/TxtNft.Medium14"
+        style="@style/TxtMealMate.Medium14"
         android:layout_marginTop="16dp"
         android:layout_marginStart="24dp"
         android:text="Create a 6-digit PIN Code that will be used\nevery time your login"
@@ -58,7 +57,7 @@
         app:OtpItemSpacing="10dp"
         android:inputType="numberPassword"
         android:focusable="true"
-        android:itemBackground="@drawable/bg_nft_ed_otp"
+        android:itemBackground="@drawable/bg_mealmate_ed_otp"
         android:textColor="@color/colorNeutral500"
         app:OtpItemCount="6"
         app:OtpViewType="none"
@@ -69,7 +68,7 @@
     <Button
         android:id="@+id/btn_continue"
         style="@style/ButtonStylePrimary"
-        android:background="@drawable/bg_nft_btn_primary"
+        android:background="@drawable/bg_mealmate_btn_primary"
         android:backgroundTint="@null"
         android:text="Confirm"
         app:backgroundTint="@null"

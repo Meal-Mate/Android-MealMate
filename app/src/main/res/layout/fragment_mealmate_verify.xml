@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.login.register.verify.NftVerifyFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:id="@+id/prgbar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -26,7 +35,7 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@style/TxtNft.Bold24"
+        style="@style/TxtMealMate.Bold24"
         android:text="Verify Your Identity"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +44,7 @@
 
     <TextView
         android:id="@+id/textView2"
-        style="@style/TxtNft.Medium14"
+        style="@style/TxtMealMate.Medium14"
         android:layout_width="match_parent"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
@@ -52,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginStart="24dp"
-        android:background="@drawable/bg_nft_outline_primary"
+        android:background="@drawable/bg_mealmate_outline_primary"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +76,7 @@
                 android:id="@+id/iv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_nft_email_active"
+                android:background="@drawable/ic_mealmate_email_active"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,12 +91,12 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_email">
 
                 <TextView
-                    style="@style/TxtNft.Semibold16"
+                    style="@style/TxtMealMate.Semibold16"
                     android:layout_marginHorizontal="0dp"
                     android:text="Email" />
 
                 <TextView
-                    style="@style/TxtNft.Regular12"
+                    style="@style/TxtMealMate.Regular12"
                     android:layout_marginTop="4dp"
                     android:layout_marginHorizontal="0dp"
                     android:textColor="@color/colorNeutral300"
@@ -117,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
-        android:background="@drawable/bg_nft_outline_secondary"
+        android:background="@drawable/bg_mealmate_outline_secondary"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +141,7 @@
                 android:id="@+id/iv_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_nft_phone_inactive"
+                android:background="@drawable/ic_mealmate_phone_inactive"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,12 +156,12 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_phone">
 
                 <TextView
-                    style="@style/TxtNft.Semibold16"
+                    style="@style/TxtMealMate.Semibold16"
                     android:layout_marginHorizontal="0dp"
                     android:text="Phone Number" />
 
                 <TextView
-                    style="@style/TxtNft.Regular12"
+                    style="@style/TxtMealMate.Regular12"
                     android:layout_marginTop="4dp"
                     android:layout_marginHorizontal="0dp"
                     android:textColor="@color/colorNeutral300"
@@ -178,7 +187,7 @@
     <Button
         android:id="@+id/btn_continue"
         style="@style/ButtonStylePrimary"
-        android:background="@drawable/bg_nft_btn_primary"
+        android:background="@drawable/bg_mealmate_btn_primary"
         android:backgroundTint="@null"
         android:text="Continue"
         app:backgroundTint="@null"

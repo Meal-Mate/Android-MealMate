@@ -13,7 +13,7 @@ import androidx.fragment.app.viewModels
 import com.example.mealmate.data.api.response.BaseResponse
 import com.example.mealmate.data.api.response.LoginResponse
 import com.example.mealmate.ui.dashboard.MealMateMainActivity
-import com.example.mealmate.ui.onboarding.MealMateOnboarding
+import com.example.mealmate.ui.login.forget_password.VerifyFragment
 import com.example.mealmate.utils.SessionManager
 import com.harshita.retrofitlogin.viewmodel.LoginViewModel
 
@@ -71,6 +71,22 @@ class LoginFragment: Fragment() {
                     requireActivity().supportFragmentManager.popBackStackImmediate()
                 }
             }
+
+            binding.tvForgotPassword.setOnClickListener{
+                val email = binding.edtEmail.text.toString()
+                val verifyFragment=VerifyFragment()
+                if(email== ""){
+                    showToast("You should Enter your Email Adress or Phone Number first !!")
+                }
+                else{
+                    verifyFragment.setEmail(email)
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.host_login_activity, VerifyFragment())
+                        .addToBackStack(null)
+                        .commit()
+                }
+            }
+
 
 
 
