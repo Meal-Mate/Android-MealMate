@@ -1,5 +1,7 @@
 package com.example.mealmate.ui.dashboard.profile
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,7 @@ class MealMateProfileFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
+
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
@@ -26,8 +29,12 @@ class MealMateProfileFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val sharedPref : SharedPreferences =
+            requireContext().getSharedPreferences(context?.getString(R.string.app_name), Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "username")
 
         binding.apply {
+            tvUsername.setText(username)
             ivAvatar.loadImage("https://picsum.photos/401/400")
             linearLayoutCopy.setOnClickListener {
                 Toast.makeText(requireContext(), "Copied", Toast.LENGTH_SHORT).show()

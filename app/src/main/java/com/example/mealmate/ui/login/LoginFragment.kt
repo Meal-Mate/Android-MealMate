@@ -1,6 +1,8 @@
 package com.example.mealmate.ui.login
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -94,6 +96,15 @@ class LoginFragment: Fragment() {
         showToast("Success:" + data?.message)
         if (!data?.token.isNullOrEmpty()) {
             data?.token?.let { SessionManager.saveAuthToken(this.requireContext(), it) }
+            val sharedPref : SharedPreferences =
+                requireContext().getSharedPreferences(context?.getString(R.string.app_name), Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putString("Username", data?.data?.username)
+            editor.putString("Username", data?.data?.username)
+            editor.putString("Username", data?.data?.username)
+            editor.putString("Username", data?.data?.username)
+
+            editor.apply()
             navigateToHome()
         }
     }
