@@ -27,7 +27,6 @@ class SetPinFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         //dialog check email
         val dialogCheckEmailFragment = DialogCheckEmailFragment()
         dialogCheckEmailFragment.show(childFragmentManager, TAG)
@@ -42,7 +41,6 @@ class SetPinFragment: Fragment() {
                 //setCurrentFragment(())
             }
         }
-
     }
 
     private fun setCurrentFragment(fragment: Fragment) {

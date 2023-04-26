@@ -26,6 +26,7 @@ class VerifyFragment : Fragment() {
         private val TAG = VerifyFragment::class.java.simpleName
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,7 +38,17 @@ class VerifyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        print(email)
+        val intent = activity?.intent
+
+        // Retrieve the values of the email, phone, and username variables
+        val email=arguments?.getString("email")
+        val phone=arguments?.getString("phone")
+        val username=arguments?.getString("username")
+        val hiddenDigits = phone?.substring(0, phone.length - 3)?.length ?: 0 // number of hidden digits
+        val maskedPhone = "*".repeat(hiddenDigits) + phone?.substring(phone.length - 3) // masked phone number
+
+        binding.txtEmail.setText(email)
+        binding.txtPhone.setText(maskedPhone)
 
         viewModel.recoverResult.observe(this.viewLifecycleOwner) {
             when (it) {
@@ -81,8 +92,6 @@ class VerifyFragment : Fragment() {
             }
 
             binding.btnContinue.setOnClickListener {
-                print("recovering")
-                val email =SessionManager.getEmailReset(this.requireContext())
                 doRecover(email)
             }
 
@@ -151,9 +160,6 @@ class VerifyFragment : Fragment() {
             addToBackStack(null)
             replace(R.id.host_login_activity, SetPinFragment())
         }
-    }
-    fun setEmail(email: String) {
-        this.email = email
     }
 
 }
