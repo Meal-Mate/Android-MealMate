@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/layout_item"
+            layout="@layout/item_mealmate_trending_auction" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_setting"
+        android:clickable="true"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:layout_marginBottom="-16dp"
+        android:background="@drawable/bg_mealmate_verified"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_mealmate_verify"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TxtMealMate.Bold24"
+        android:layout_marginBottom="16dp"
+        android:text="Your NFT Has Launch!"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TxtMealMate.Regular16"
+        android:layout_marginBottom="60dp"
+        android:text="Go-NFT is a platform that make a \nnew experience for NFT Transaction"
+        android:textColor="@color/colorNeutral300"
+        app:layout_constraintBottom_toTopOf="@+id/btn_view_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_view_item"
+        style="@style/ButtonStylePrimary"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/bg_mealmate_btn_primary"
+        android:backgroundTint="@null"
+        android:text="View Item"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
