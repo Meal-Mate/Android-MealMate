@@ -1,9 +1,11 @@
 package com.example.mealmate.data.api.methods
 
 import com.example.mealmate.data.api.ApiClient
+import com.example.mealmate.data.api.request.FindEmailRequest
 import com.example.mealmate.data.api.request.LoginRequest
 import com.example.mealmate.data.api.request.RecoverPasswordRequest
 import com.example.mealmate.data.api.request.RegisterRequest
+import com.example.mealmate.data.api.response.FindEmailResponse
 import com.example.mealmate.data.api.response.LoginResponse
 import com.example.mealmate.data.api.response.RecoverPasswordResponse
 import com.example.mealmate.data.api.response.RegisterResponse
@@ -21,6 +23,9 @@ interface UserApi {
 
     @POST("/resetpassword/recover")
     suspend fun recover(@Body recoverPasswordRequest: RecoverPasswordRequest):Response<RecoverPasswordResponse>
+
+    @POST("/resetpassword/findByEmail")
+    suspend fun findByEmail(@Body findEmailRequest: FindEmailRequest):Response<FindEmailResponse>
 
     companion object {
         fun getApi(): UserApi? {

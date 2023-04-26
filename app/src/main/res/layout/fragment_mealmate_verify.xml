@@ -93,14 +93,15 @@
                 <TextView
                     style="@style/TxtMealMate.Semibold16"
                     android:layout_marginHorizontal="0dp"
-                    android:text="Email" />
+                    android:text="Verify with Email" />
 
                 <TextView
                     style="@style/TxtMealMate.Regular12"
+                    android:id="@+id/txt_email"
                     android:layout_marginTop="4dp"
                     android:layout_marginHorizontal="0dp"
                     android:textColor="@color/colorNeutral300"
-                    android:text="Verify with Email" />
+                    android:text="" />
 
             </LinearLayout>
 
@@ -158,14 +159,15 @@
                 <TextView
                     style="@style/TxtMealMate.Semibold16"
                     android:layout_marginHorizontal="0dp"
-                    android:text="Phone Number" />
+                    android:text="Verify with Phone Number" />
 
                 <TextView
                     style="@style/TxtMealMate.Regular12"
+                    android:id="@+id/txt_phone"
                     android:layout_marginTop="4dp"
                     android:layout_marginHorizontal="0dp"
                     android:textColor="@color/colorNeutral300"
-                    android:text="Verify with Phone Number" />
+                    android:text="" />
 
             </LinearLayout>
 
