@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        style="@style/ImageBackStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TxtMealMate.Bold24"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="24dp"
+        android:text="Create Your Pin Code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TxtMealMate.Medium14"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:text="Create a 6-digit PIN Code that will be used\nevery time your login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+<!--    <in.aabhasjindal.otptextview.OtpTextView-->
+<!--        android:id="@+id/otp_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        app:box_margin="6dp"-->
+<!--        app:otp="1"-->
+<!--        app:length="6"-->
+<!--        app:otp_text_size="16sp"-->
+<!--        android:textColor="@color/colorNeutral500"-->
+<!--        app:otp_box_background="@drawable/bg_ed_otp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+
+    <com.mukesh.OtpView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:inputType="numberPassword"
+        android:focusable="true"
+        android:itemBackground="@drawable/bg_mealmate_ed_otp"
+        android:textColor="@color/colorNeutral500"
+        app:OtpItemCount="6"
+        app:OtpItemSpacing="10dp"
+        app:OtpViewType="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/ButtonStylePrimary"
+        android:background="@drawable/bg_mealmate_btn_primary"
+        android:backgroundTint="@null"
+        android:text="Confirm"
+        app:backgroundTint="@null"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

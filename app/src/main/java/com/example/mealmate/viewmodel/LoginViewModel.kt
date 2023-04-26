@@ -2,11 +2,11 @@ package com.harshita.retrofitlogin.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.mealmate.data.api.request.FindEmailRequest
 import com.example.mealmate.data.api.request.LoginRequest
+import com.example.mealmate.data.api.request.RecoverPasswordRequest
 import com.example.mealmate.data.api.request.RegisterRequest
-import com.example.mealmate.data.api.response.BaseResponse
-import com.example.mealmate.data.api.response.LoginResponse
-import com.example.mealmate.data.api.response.RegisterResponse
+import com.example.mealmate.data.api.response.*
 import com.example.mealmate.repository.UserRepository
 import kotlinx.coroutines.launch
 
@@ -15,6 +15,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val userRepo = UserRepository()
     val loginResult: MutableLiveData<BaseResponse<LoginResponse>> = MutableLiveData()
     val registerResult: MutableLiveData<BaseResponse<RegisterResponse>> = MutableLiveData()
+    val recoverResult:MutableLiveData<BaseResponse<RecoverPasswordResponse>> = MutableLiveData()
+    val findbyemailResult:MutableLiveData<BaseResponse<FindEmailResponse>> = MutableLiveData()
 
     fun loginUser(email: String, pwd: String) {
 
@@ -60,6 +62,50 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
             } catch (ex: Exception) {
                 registerResult.value = BaseResponse.Error(ex.message)
+            }
+        }
+    }
+    fun recoverPassword(email: String) {
+        println("Recovering password for email: $email")
+        recoverResult.value = BaseResponse.Loading()
+        viewModelScope.launch {
+            try {
+
+                val recoverPasswordRequest = RecoverPasswordRequest(
+                    email = email
+
+                )
+                val response = userRepo.recoverPassword(recoverPasswordRequest = recoverPasswordRequest)
+                if (response?.code() == 200) {
+                    recoverResult.value = BaseResponse.Success(response.body())
+                } else {
+                    registerResult.value = BaseResponse.Error(response?.message())
+                }
+
+            } catch (ex: Exception) {
+                recoverResult.value = BaseResponse.Error(ex.message)
+            }
+        }
+    }
+    fun findByEmail(email:String){
+        println("Sending email for :$email")
+        findbyemailResult.value= BaseResponse.Loading()
+        viewModelScope.launch {
+            try {
+
+                val findEmailRequest = FindEmailRequest(
+                    email = email
+
+                )
+                val response = userRepo.findByEmail(findEmailRequest = findEmailRequest)
+                if (response?.code() == 200) {
+                    findbyemailResult.value = BaseResponse.Success(response.body())
+                } else {
+                    findbyemailResult.value = BaseResponse.Error(response?.message())
+                }
+
+            } catch (ex: Exception) {
+                findbyemailResult.value = BaseResponse.Error(ex.message)
             }
         }
     }

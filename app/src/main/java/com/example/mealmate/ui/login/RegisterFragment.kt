@@ -106,11 +106,10 @@ class RegisterFragment: Fragment() {
         Toast.makeText(this.requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
     private fun navigateToSignin() {
-        val intent =  Intent(requireContext(), Login::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-        startActivity(intent)
-        println("navigation to sign in")
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.host_login_activity, LoginFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }
 
