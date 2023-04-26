@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        style="@style/ImageBackStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TxtMealMate.Bold16"
+        android:text="Create Propostion"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_item_name"
+                style="@style/TxtMealMate.Medium14"
+                android:text="@string/restuarant_name"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/colorNeutral500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt_search"
+                style="@style/TxtMealMate.Medium14"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_mealmate_ed_create_item"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_name"
+                tools:ignore="RtlSymmetry" />
+
+
+            <TextView
+                android:id="@+id/tv_item_royalty"
+                style="@style/TxtMealMate.Medium14"
+                android:layout_marginTop="24dp"
+                android:text="Restaurant Address"
+                android:textColor="@color/colorNeutral500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+            <EditText
+                android:id="@+id/edt_royalty"
+                style="@style/TxtMealMate.Medium14"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_mealmate_ed_create_item"
+                android:paddingStart="24dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_royalty"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_sales_end"
+                style="@style/TxtMealMate.Medium14"
+                android:layout_marginTop="24dp"
+                android:text="Date and Time"
+                android:textColor="@color/colorNeutral500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_royalty" />
+
+            <EditText
+                android:id="@+id/edt_sales_end"
+                style="@style/TxtMealMate.Medium14"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_mealmate_ed_create_item"
+                android:drawableEnd="@drawable/ic_mealmate_calendar"
+                android:hint="Choose Royalty"
+                android:paddingStart="24dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/colorNeutral900"
+                android:textColorHint="@color/colorNeutral300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sales_end"
+                tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btn_preview"
+                style="@style/ButtonStylePrimary"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_mealmate_outline_primary"
+                android:text="Preview"
+                android:textColor="@color/colorBrandMealMate500"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toTopOf="@id/btn_create_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_sales_end"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/btn_create_item"
+                style="@style/ButtonStylePrimary"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/bg_mealmate_btn_primary"
+                android:backgroundTint="@null"
+                android:text="Create Proposition"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
