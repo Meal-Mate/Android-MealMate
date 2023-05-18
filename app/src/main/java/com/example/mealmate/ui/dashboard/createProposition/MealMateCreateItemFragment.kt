@@ -109,7 +109,7 @@ class MealMateCreateItemFragment: Fragment()  {
         navigateToCreateItemSuccess()
     }
     fun addProposition() {
-        val restaurantName = binding.edtSearch.text.toString()
+        val restaurantName = binding.edtName.text.toString()
         val date = binding.edtRoyalty.text.toString()
         val restaurantAddress = binding.edtSalesEnd.text.toString()
         val sharedPref : SharedPreferences =
