@@ -1,18 +1,28 @@
 package com.example.mealmate.ui.dashboard
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.mealmate.R
 import com.example.mealmate.databinding.ActivityMealmateMainBinding
+import com.example.mealmate.ui.dashboard.createProposition.MapsFragment
 import com.example.mealmate.ui.dashboard.createProposition.MealMateUploadItemFragment
 import com.example.mealmate.ui.dashboard.createProposition.preview.MealMatePreviewFragment
 import com.example.mealmate.ui.dashboard.home.MealMateHomeFragement
 import com.example.mealmate.ui.dashboard.profile.MealMateProfileFragment
 import com.example.mealmate.ui.dashboard.proposition.MealMatePropositionFragment
+import com.example.mealmate.ui.login.forget_password.VerifyFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,6 +31,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MealMateMainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMealmateMainBinding
     private lateinit var profileFragment: Fragment
+    private val locationPermissionRequestCode = 101
+    private val locationManager by lazy {
+        this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +47,7 @@ class MealMateMainActivity: AppCompatActivity() {
         if (savedInstanceState != null) {
             profileFragment = supportFragmentManager.getFragment(savedInstanceState, "profileFragment")!!
             try {
+
                 setCurrentFragment(profileFragment)
             } catch (_: Exception) {
 
@@ -85,6 +100,19 @@ class MealMateMainActivity: AppCompatActivity() {
                 }
 
                 btnSingle?.setOnClickListener {
+                    if (ContextCompat.checkSelfPermission(
+                            this@MealMateMainActivity,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        requestLocation()
+                    } else {
+                        ActivityCompat.requestPermissions(
+                            this@MealMateMainActivity,
+                            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                            locationPermissionRequestCode
+                        )
+                    }
                     supportFragmentManager.commit {
                         replace(R.id.host_fragment_activity_main, MealMateUploadItemFragment())
                         addToBackStack(null)
@@ -94,6 +122,20 @@ class MealMateMainActivity: AppCompatActivity() {
                 }
 
                 btnMultiple?.setOnClickListener {
+                    if (ContextCompat.checkSelfPermission(
+                            this@MealMateMainActivity,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        requestLocation()
+                    } else {
+                        ActivityCompat.requestPermissions(
+                            this@MealMateMainActivity,
+                            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                            locationPermissionRequestCode
+                        )
+                    }
+
                     supportFragmentManager.commit {
                         replace(R.id.host_fragment_activity_main, MealMateUploadItemFragment())
                         addToBackStack(null)
@@ -145,5 +187,59 @@ class MealMateMainActivity: AppCompatActivity() {
             }
         }
 
+    }
+    private fun requestLocation() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+            location?.let {
+                Toast.makeText(
+                    this,
+                    "Latitude: ${it.latitude}, Longitude: ${it.longitude}",
+                    Toast.LENGTH_LONG
+                ).show()
+                val bundle = Bundle().apply {
+                    putDouble("long", it.longitude)
+                    putDouble("latt", it.latitude)
+                }
+                val mapsFragment = MapsFragment().apply {
+                    arguments = bundle
+                }
+            } ?: run {
+                Toast.makeText(
+                    this,
+                    "Unable to retrieve location",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                locationPermissionRequestCode
+            )
+        }
+
+    }
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == locationPermissionRequestCode) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                requestLocation()
+            } else {
+                Toast.makeText(
+                    this,
+                    "Location permission denied",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 }

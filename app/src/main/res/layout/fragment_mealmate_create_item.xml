@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edt_search"
+                android:id="@+id/edt_name"
                 style="@style/TxtMealMate.Medium14"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
@@ -81,7 +81,7 @@
                 android:text="Restaurant Address"
                 android:textColor="@color/colorNeutral500"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
             <EditText
                 android:id="@+id/edt_royalty"

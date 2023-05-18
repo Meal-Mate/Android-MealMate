@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.mealmate.R
 import com.example.mealmate.databinding.FragmentMealmateUploadItemBinding
-import com.example.mealmate.utils.GlideHelper.loadImage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -21,13 +20,17 @@ class MealMateUploadItemFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMealmateUploadItemBinding.inflate(layoutInflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        super.onViewCreated(view, savedInstanceState)
-
+        val fragment = MapsFragment()
+        val fragmentManager = childFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_maps,fragment)
+        transaction.commit()
         val btmNavbar: BottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation)
         val fab: FloatingActionButton = requireActivity().findViewById(R.id.fab_add)
         btmNavbar.visibility = View.GONE
@@ -35,12 +38,7 @@ class MealMateUploadItemFragment : Fragment(){
 
         binding.apply {
             btnBack.setOnClickListener { requireActivity().onBackPressed() }
-            btnNext.setOnClickListener {
-                requireActivity().supportFragmentManager.commit {
-                    replace(R.id.host_fragment_activity_main, MealMateCreateItemFragment())
-                    addToBackStack(null)
-                }
-            }
+
         }
 
     }

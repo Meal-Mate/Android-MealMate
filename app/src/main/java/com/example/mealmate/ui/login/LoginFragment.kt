@@ -18,6 +18,7 @@ import com.example.mealmate.data.api.response.FindEmailResponse
 import com.example.mealmate.data.api.response.LoginResponse
 import com.example.mealmate.ui.dashboard.MealMateMainActivity
 import com.example.mealmate.ui.login.forget_password.VerifyFragment
+import com.example.mealmate.ui.login.interests.InterstsFragment
 import com.example.mealmate.utils.SessionManager
 import com.harshita.retrofitlogin.viewmodel.LoginViewModel
 
@@ -140,7 +141,7 @@ class LoginFragment: Fragment() {
             editor.putString("_id", data?.data?.id)
             System.out.println(data?.data?.id)
             editor.apply()
-            navigateToHome()
+            navigateToInterests()
         }
     }
 
@@ -151,11 +152,11 @@ class LoginFragment: Fragment() {
     fun showToast(msg: String) {
         Toast.makeText(this.requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
-    private fun navigateToHome() {
-        val intent =  Intent(requireContext(), MealMateMainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-        startActivity(intent)
+    private fun navigateToInterests() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.host_login_activity, InterstsFragment())
+            .addToBackStack(null)
+            .commit()
     }
     fun processFindByEmail(data: FindEmailResponse?) {
         showToast("Success:" + data?.success)
