@@ -2,10 +2,7 @@ package com.harshita.retrofitlogin.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.mealmate.data.api.request.FindEmailRequest
-import com.example.mealmate.data.api.request.LoginRequest
-import com.example.mealmate.data.api.request.RecoverPasswordRequest
-import com.example.mealmate.data.api.request.RegisterRequest
+import com.example.mealmate.data.api.request.*
 import com.example.mealmate.data.api.response.*
 import com.example.mealmate.repository.UserRepository
 import kotlinx.coroutines.launch
@@ -17,7 +14,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val registerResult: MutableLiveData<BaseResponse<RegisterResponse>> = MutableLiveData()
     val recoverResult:MutableLiveData<BaseResponse<RecoverPasswordResponse>> = MutableLiveData()
     val findbyemailResult:MutableLiveData<BaseResponse<FindEmailResponse>> = MutableLiveData()
-
+    val resetResult:MutableLiveData<BaseResponse<ResetResponse>> = MutableLiveData()
     fun loginUser(email: String, pwd: String) {
 
         loginResult.value = BaseResponse.Loading()
@@ -79,7 +76,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 if (response?.code() == 200) {
                     recoverResult.value = BaseResponse.Success(response.body())
                 } else {
-                    registerResult.value = BaseResponse.Error(response?.message())
+                    recoverResult.value = BaseResponse.Error(response?.message())
                 }
 
             } catch (ex: Exception) {
@@ -106,6 +103,28 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
             } catch (ex: Exception) {
                 findbyemailResult.value = BaseResponse.Error(ex.message)
+            }
+        }
+    }
+    fun resetPassword(otp: String) {
+        println("Comparing: $otp")
+        resetResult.value = BaseResponse.Loading()
+        viewModelScope.launch {
+            try {
+
+                val resetRequest = ResetRequest(
+                    otp = otp
+
+                )
+                val response = userRepo.reset(resetRequest = resetRequest)
+                if (response?.code() == 200) {
+                    resetResult.value = BaseResponse.Success(response.body())
+                } else {
+                    resetResult.value = BaseResponse.Error(response?.message())
+                }
+
+            } catch (ex: Exception) {
+                resetResult.value = BaseResponse.Error(ex.message)
             }
         }
     }

@@ -19,7 +19,6 @@ class VerifyFragment : Fragment() {
 
     private lateinit var binding: FragmentMealmateVerifyBinding
     private val viewModel: LoginViewModel by viewModels()
-    private var email: String? = null
 
 
     companion object {
@@ -49,6 +48,7 @@ class VerifyFragment : Fragment() {
 
         binding.txtEmail.setText(email)
         binding.txtPhone.setText(maskedPhone)
+
 
         viewModel.recoverResult.observe(this.viewLifecycleOwner) {
             when (it) {

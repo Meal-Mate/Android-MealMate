@@ -1,5 +1,6 @@
 package com.example.mealmate.ui.dashboard.createProposition
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,9 +33,12 @@ class MealMateCreateItemFragment: Fragment()  {
         val fab: FloatingActionButton = requireActivity().findViewById(R.id.fab_add)
         btmNavbar.visibility = View.GONE
         fab.visibility = View.GONE
+        val title=arguments?.getString("restaurant_title")
+        println(title)
 
         binding.apply {
             btnPreview.setOnClickListener {
+
                 requireActivity().supportFragmentManager.commit {
                     addToBackStack(null)
                     replace(R.id.host_fragment_activity_main, MealMatePreviewFragment())
@@ -52,6 +56,9 @@ class MealMateCreateItemFragment: Fragment()  {
                 btmNavbar.visibility = View.VISIBLE
                 fab.visibility = View.VISIBLE
             }
+            edtName.setText(title)
         }
     }
+
+
 }

@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ProgressBar
+        android:id="@+id/prgbar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/btn_back"
         style="@style/ImageBackStyle"
@@ -48,7 +58,7 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
 
 
-    <com.mukesh.OtpView
+    <com.mukeshsolanki.OtpView
         android:id="@+id/otp_view"
         android:layout_width="wrap_content"
         android:layout_marginStart="24dp"
