@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.login.register.verify.setpin.preferedwallet.NftPreferredWalletFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TxtNft.Bold24"
+        android:layout_marginTop="40dp"
+        android:text="Lets choose your prefered \nwallet!"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TxtNft.Medium14"
+        android:layout_width="0dp"
+        android:text="Create a 6-digit PIN Code that will be used every time your login"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2">
+
+        <LinearLayout
+            android:id="@+id/wallet_metamask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nft_outline_secondary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_nft_metamask" />
+
+            <TextView
+                style="@style/TxtNft.Semibold16"
+                android:layout_width="match_parent"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/colorNeutral500"
+                android:text="Metamask" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallet_coinbase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nft_outline_secondary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_nft_coinbase" />
+
+            <TextView
+                style="@style/TxtNft.Semibold16"
+                android:layout_width="match_parent"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/colorNeutral500"
+                android:text="Coinbase Wallet" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallet_connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nft_outline_secondary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_nft_wallet_connect" />
+
+            <TextView
+                style="@style/TxtNft.Semibold16"
+                android:layout_width="match_parent"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/colorNeutral500"
+                android:text="Coinbase Wallet" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wallet_formatic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nft_outline_secondary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_nft_formatic" />
+
+            <TextView
+                style="@style/TxtNft.Semibold16"
+                android:layout_width="match_parent"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/colorNeutral500"
+                android:text="Coinbase Wallet" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_connect_wallet"
+        style="@style/ButtonStylePrimary"
+        android:background="@drawable/bg_nft_btn_primary_selector"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        android:text="Connect Wallet"
+        android:enabled="false"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_skip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_skip"
+        style="@style/TxtNft.Medium14"
+        android:text="Skip for now"
+        android:textColor="@color/colorNeutral300"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
