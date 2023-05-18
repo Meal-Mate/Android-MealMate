@@ -61,7 +61,7 @@
         <TextView
             style="@style/TxtMealMate.Bold16"
             android:id="@+id/tv_title_item"
-            android:text="The Cube 021"
+            android:text="Restaurant Hafood"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             app:layout_constraintTop_toBottomOf="@id/cardView"
@@ -85,7 +85,7 @@
 
                 <TextView
                     style="@style/TxtMealMate.Medium12"
-                    android:text="Current Bid"
+                    android:text="Ends in"
                     android:layout_width="match_parent"
                     android:gravity="start"
                     android:layout_margin="0dp"
@@ -98,15 +98,12 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_mealmate_eth" />
+
 
                     <TextView
                         style="@style/TxtMealMate.Semibold16"
                         android:id="@+id/tv_bid"
-                        android:text="15.2"
+                        android:text="03h:23m:15s"
                         android:textColor="@color/colorNeutral900"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp" />

@@ -12,6 +12,7 @@ import com.example.mealmate.ui.dashboard.createProposition.MealMateUploadItemFra
 import com.example.mealmate.ui.dashboard.createProposition.preview.MealMatePreviewFragment
 import com.example.mealmate.ui.dashboard.home.MealMateHomeFragement
 import com.example.mealmate.ui.dashboard.profile.MealMateProfileFragment
+import com.example.mealmate.ui.dashboard.proposition.MealMatePropositionFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -52,7 +53,7 @@ class MealMateMainActivity: AppCompatActivity() {
                 val profileFragment = MealMateProfileFragment()
                 val homeFragment = MealMateHomeFragement()
                  setCurrentFragment(homeFragment)
-
+                val propositionFragment = MealMatePropositionFragment()
             bottomNavigation.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.home -> {
@@ -62,7 +63,7 @@ class MealMateMainActivity: AppCompatActivity() {
 
                     }
                     R.id.statistic -> {
-
+                        setCurrentFragment(propositionFragment)
                     }
                     R.id.profile -> {
                         setCurrentFragment(profileFragment)

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_sheet_layout_statistic"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="24dp"
+        android:background="@null"
+        android:src="@drawable/ic_mealmate_close_bg0"
+        app:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_mealmate_bottom_sheet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1">
+
+            <TextView
+                android:id="@+id/tv_place_a_bid"
+                style="@style/TxtMealMate.Bold24"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="24dp"
+                android:text="Filter"
+                app:layout_constraintBottom_toTopOf="@id/tv_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_reset"
+                style="@style/TxtMealMate.Bold16"
+                android:text="Reset"
+                android:textColor="@color/colorNeutral300"
+                app:layout_constraintBottom_toBottomOf="@id/tv_place_a_bid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_place_a_bid" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                style="@style/TxtMealMate.Semibold16"
+                android:layout_marginBottom="16dp"
+                android:text="Event Type"
+                app:layout_constraintBottom_toTopOf="@id/linearLayout3"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_category"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginEnd="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_all"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:textColor="@color/colorNeutral300"
+                            android:text="All" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_sales"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginStart="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_sales"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:textColor="@color/colorNeutral300"
+                            android:text="Sales" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_listing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginStart="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_listing"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:textColor="@color/colorNeutral300"
+                            android:text="Listings" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginEnd="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_offer"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:textColor="@color/colorNeutral300"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Offers" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_call_offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginStart="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_call_offer"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:textColor="@color/colorNeutral300"
+                            android:text="Coll Offer" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_filter_transfer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_mealmate_outline_secondary"
+                        android:layout_marginStart="8dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_filter_transfer"
+                            style="@style/TxtMealMate.Semibold16"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:textColor="@color/colorNeutral300"
+                            android:text="Transfer" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_category"
+                style="@style/TxtMealMate.Semibold16"
+                android:layout_marginBottom="16dp"
+                android:text="Collections"
+                app:layout_constraintBottom_toTopOf="@id/linearLayout2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_mealmate_outline_secondary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_chains"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    style="@style/TxtMealMate.Medium14"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="All Collections"
+                    android:textColor="@color/colorNeutral500" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_mealmate_arrow_down" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_chains"
+                style="@style/TxtMealMate.Semibold16"
+                android:layout_marginBottom="16dp"
+                android:text="Chains"
+                app:layout_constraintBottom_toTopOf="@id/linearLayout"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/bg_mealmate_outline_secondary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_apply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    style="@style/TxtMealMate.Medium14"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="All Chains"
+                    android:textColor="@color/colorNeutral500" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_mealmate_arrow_down" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_apply"
+                style="@style/ButtonStylePrimary"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/bg_mealmate_btn_primary"
+                android:backgroundTint="@null"
+                android:text="Apply"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

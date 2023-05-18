@@ -137,6 +137,8 @@ class LoginFragment: Fragment() {
             editor.putString("Username", data?.data?.username)
             editor.putString("email", data?.data?.email)
             editor.putString("phone", data?.data?.phone)
+            editor.putString("_id", data?.data?.id)
+            System.out.println(data?.data?.id)
             editor.apply()
             navigateToHome()
         }
